@@ -1,0 +1,10 @@
+<script>
+function video_data(video_in_json)
+	{
+		video=JSON.parse(video_in_json);
+		codestring='<html><head><title>svideo.tom.ru: '+video['name']+'<\/title><body bgcolor="#000000" text="#FFFFFF"><div align="center"><div id="mediaplayer">JW Player goes here<\/div><script src="\/hdd\/pl\/pl.js"><\/script><script type="text\/javascript">jwplayer("mediaplayer").setup({flashplayer: "\/hdd\/pl\/jwp.swf",file: "'+video['hd_url']+'.mp4",image: "'+video['poster']+'",width: "100%",duration: "'+video['duration']+'",skin: "\/hdd\/pl\/skins\/newtubedark.zip",screencolor: "#000000",height: "100%",autostart: "false",fullscreen: "0",controlbar : "bottom"});<\/script><\/div><\/body><\/html>';
+		document.write(codestring);
+	} 
+
+document.write("<script type=\"text\/javascript\" src=\""+'http://mp4.tom.ru/hdd/json/'+location.search.substring(1)+"\"><\/script>");
+</script>
